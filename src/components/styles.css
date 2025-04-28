@@ -30,7 +30,7 @@
   text-transform: uppercase;
 }
 .react-calendar__tile--active {
-  background-color:#1d1d1d;
+  background-color:#3a3939ce;
   font-weight: bold;
   color: #fff;
 }
