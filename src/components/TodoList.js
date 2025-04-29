@@ -44,7 +44,7 @@ const TodoList = () => {
        <p className='placeholderCalendar'>Выбери дату выполнения задачи</p>
         <div className='wrapperTop'>
           <input className='input'
-            placeholder='новая задача'
+            placeholder='Новая задача'
             type="text"
             value={newTask}
             onChange={handleInputChange}

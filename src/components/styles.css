@@ -45,7 +45,7 @@
   color: #1d1d1d;
   text-transform: uppercase;
   font-weight: bold;
-  font-weight: 20px;
+  font-size: 20px;
   padding-top: 10px;
   padding-bottom: 3px;
 }
@@ -77,7 +77,6 @@ h2 {
   
 ol {
   list-style-type: decimal;
-  /* padding: 0 30px 0 30px; */
 }
   
 li {
@@ -158,6 +157,7 @@ li {
 }
 .title_date {
   text-decoration: underline;
+  color: #fff;
   background-color: #007bff;
   display: inline-block;
   border-radius: 5px;
@@ -169,4 +169,28 @@ li {
   text-decoration: underline;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .react-calendar {
+    width: 88vw;
+  }
+  .placeholderCalendar {
+    width: 88vw;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  h2 {
+    text-align: center;
+  }
+  li {
+    width: 88vw;
+  }
+  .wrapperTop {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input {
+    font-size: 16px;
+    width: 88vw;
+  }
 }
