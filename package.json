@@ -1,7 +1,7 @@
 {
   "name": "my-todo-list",
   "version": "0.1.0",
-  "homepage": "https://github.com/IrinaTab/my-todo-list.git",
+  "homepage": "https://irinatab.github.io/my-todo-list",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "main -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
