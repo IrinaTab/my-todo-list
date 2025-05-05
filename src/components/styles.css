@@ -11,10 +11,6 @@
   cursor: pointer;
 
 }
-.react-calendar:hover + .placeholderCalendar {
-  display: block;
-}
-
 .react-calendar__navigation {
   /* Стили для навигационной части календаря */
   font-size: 18px;
@@ -54,8 +50,7 @@
   border-radius: 50%;
   padding: 5px;
 }
-.placeholderCalendar {
-  display: none;
+.error-message {
   padding: 7px;
   background-color: #fff;
   width: 40vw;
@@ -63,7 +58,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
-  color: #0069d980;
+  color: rgba(255, 0, 0, 0.644);
   font-style: italic;
 
 }
@@ -74,34 +69,11 @@ h2 {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.650);
   text-transform: uppercase;
 }
-  
-ol {
-  list-style-type: decimal;
+ul {
+  list-style-type: none;
 }
   
-li {
-  background-color: transparent;
-  padding: 10px;
-  margin-top: 20px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  
-  width: 27vw;
-  
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
-
-}
-.wrapperTop {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: center;
-}
-.btnAdd {
+.add-button {
   border: none;
   cursor: pointer;
   margin-top: 20px;
@@ -114,56 +86,106 @@ li {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
   transition: background-color 0.3s, transform 0.3s;
 }
-.btnAdd:hover {
+.sort-button {
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: inherit;
+  font-size: 18px;
+  padding: 7px 7px 7px 7px;
+  color: #fff;
+  background-color: rgba(128, 128, 128, 0.678);
+  border-radius: 1px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.add-button:hover {
   background-color: #0069d9;
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
 }
-.input {
-  border: none;
-  font-size: 25px;
-  color: grey;
-  padding: 7px;
-  margin-top: 20px;
-  margin-right: 20px;
-  border-radius: 5px;
-  width: 50vw;
-}
-.input::placeholder {
-  color: #0069d980;
-  font-style: italic;
-}
-.input:focus::placeholder {
-  opacity: 0;
-}
-.input:focus {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
-}
-.list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.btnX {
-  width: 23px;
-  height: 23px;
-  margin-left: 15px;
-  margin-top: 10px;
+.date-group {
   background-color: transparent;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  
+  width: 26vw;
+  
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
+
 }
-.btnX:hover {
-  cursor: pointer;
-}
-.title_date {
+.date-header {
   text-decoration: underline;
   color: #fff;
   background-color: #007bff;
   display: inline-block;
   border-radius: 5px;
   padding: 3px;
+  margin-bottom: 15px;
 }
-.count {
+.tasks-group {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-input {
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.938);
+  padding: 7px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  width: 50vw;
+}
+.task-input::placeholder {
+  color: #0069d980;
+  font-style: italic;
+}
+.task-input:focus::placeholder {
+  opacity: 0;
+}
+.task-input:focus {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.650);
+}
+.tasks-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+.delete-button:hover {
+  cursor: pointer;
+}
+.delete-icon {
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  
+}
+.tasks-count {
   font-size: 20px;
   font-weight: bold;
   text-decoration: underline;
@@ -174,23 +196,14 @@ li {
   .react-calendar {
     width: 88vw;
   }
-  .placeholderCalendar {
-    width: 88vw;
-    font-size: 16px;
-    font-weight: normal;
-  }
   h2 {
     text-align: center;
   }
-  li {
+  .date-group {
     width: 88vw;
   }
-  .wrapperTop {
-    flex-direction: column;
-    align-items: center;
-  }
-  .input {
-    font-size: 16px;
+  .task-input {
     width: 88vw;
   }
+  
 }
